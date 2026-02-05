@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 140 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 140 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 10% 10%;
+
+    --primary: 134 62% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 120 14% 95%;
+    --secondary-foreground: 140 10% 10%;
+
+    --muted: 120 14% 95%;
+    --muted-foreground: 140 5% 45%;
+
+    --accent: 134 62% 95%;
+    --accent-foreground: 134 62% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 10% 90%;
+    --input: 120 10% 90%;
+    --ring: 134 62% 40%;
+
+    --radius: 1rem;
+
+    /* Custom Taza Taza tokens */
+    --taza-green: 134 62% 40%;
+    --taza-green-light: 134 62% 95%;
+    --taza-green-dark: 134 62% 30%;
+    --taza-white: 0 0% 100%;
+    --taza-gray: 120 14% 95%;
+    --taza-gray-dark: 120 5% 85%;
+    --taza-text: 140 10% 10%;
+    --taza-text-muted: 140 5% 45%;
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(140 10% 10% / 0.08);
+    --shadow-card: 0 4px 12px -4px hsl(140 10% 10% / 0.1);
+    --shadow-button: 0 4px 14px -4px hsl(134 62% 40% / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 140 10% 8%;
+    --foreground: 120 10% 95%;
+
+    --card: 140 10% 12%;
+    --card-foreground: 120 10% 95%;
+
+    --popover: 140 10% 12%;
+    --popover-foreground: 120 10% 95%;
+
+    --primary: 134 62% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 140 10% 18%;
+    --secondary-foreground: 120 10% 95%;
+
+    --muted: 140 10% 18%;
+    --muted-foreground: 120 5% 55%;
+
+    --accent: 134 40% 20%;
+    --accent-foreground: 134 62% 70%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 140 10% 20%;
+    --input: 140 10% 20%;
+    --ring: 134 62% 45%;
+
+    --taza-green: 134 62% 45%;
+    --taza-green-light: 134 40% 20%;
+    --taza-green-dark: 134 62% 60%;
+    --taza-white: 140 10% 12%;
+    --taza-gray: 140 10% 15%;
+    --taza-gray-dark: 140 10% 25%;
+    --taza-text: 120 10% 95%;
+    --taza-text-muted: 120 5% 55%;
+
+    --shadow-soft: 0 2px 8px -2px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 4px 12px -4px hsl(0 0% 0% / 0.4);
+    --shadow-button: 0 4px 14px -4px hsl(134 62% 45% / 0.3);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 2px;
+}
+
+/* Hide scrollbar for mobile feel */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
