@@ -3,7 +3,7 @@
  * Handles Google OAuth login with proper redirect management
  */
 
-import { supabase } from '@/integrations/supabase/client';
+import { supabase } from '@/lib/supabase';
 import { getRedirectUrl } from '@/config/appConfig';
 
 /**
